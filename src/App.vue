@@ -3,11 +3,18 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <h1>Vuex</h1>
+                <br>
+                <h5>Result through getting the state in Vuex</h5>
                 <app-result></app-result>
                 <hr>
+                <h5>Getting the Result through mapped Getters</h5>
                 <app-another-result></app-another-result>
                 <hr>
+                <h5>Vuex asyncActions Counter</h5>
                 <app-counter></app-counter>
+                <hr>
+                <h5>Vuex Mutation Counter</h5>
+                <app-another-counter></app-another-counter>
             </div>
         </div>
     </div>
@@ -17,6 +24,7 @@
     import Counter from './components/Counter.vue';
     import Result from './components/Result.vue';
     import AnotherResult from './components/AnotherResult.vue';
+    import AnotherCounter from './components/AnotherCounter.vue';
 
     export default {
         data() {
@@ -27,7 +35,8 @@
         components: {
             appCounter: Counter,
             appResult: Result,
-            appAnotherResult: AnotherResult
+            appAnotherResult: AnotherResult,
+            appAnotherCounter: AnotherCounter
         }
     }
 </script>

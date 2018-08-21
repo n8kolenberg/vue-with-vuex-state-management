@@ -28,7 +28,7 @@
             ]),
 
             ourOwn() {
-
+                //You can use your own compouted property here
             }
         }
     }

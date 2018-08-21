@@ -1,6 +1,7 @@
 {
   "presets": [
     ["es2015", { "modules": false }],
+    //We needed to add the following to use the spread operator in the computed property object in AnotherResult.vue
     ["stage-2"]
   ]
 }
