@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>Counter is: {{ doubleCounter }}</p> <!--Used to be {{counter}}-->
-        <p>Number of clicks: {{ stringCounter }}</p> <!--Used to be {{clicks}}-->
+        <p>Number without doubling: {{ stringCounter }}</p> <!--Used to be {{clicks}}-->
     </div>
 </template>
 
