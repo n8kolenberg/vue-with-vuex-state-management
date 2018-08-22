@@ -15,6 +15,12 @@
                 <hr>
                 <h5>Vuex Mutation Counter</h5>
                 <app-another-counter></app-another-counter>
+                <br>
+                <hr>
+                <h5>Value update through computed property setter and getting the value from $store</h5>
+                <input type="text" v-model="value">
+                <p>Value: {{value}}</p>
+
             </div>
         </div>
     </div>
@@ -30,6 +36,21 @@
         data() {
             return {
                 
+            }
+        },
+        computed: {
+            value: {
+                /**Adding get and set so we can still use v-model on the input and bind to 'value'. 
+                 * If we didn't do that, we would have to use v-bind to value and use a method to update the value in the store
+                 * based on what the user typed in
+                 */
+                get() {
+                   return this.$store.getters.getValue;
+                },
+                set(value) {
+                    //Dispatch will mutate the value in the store
+                    return this.$store.dispatch('updateValue', value);
+                }
             }
         },
         components: {

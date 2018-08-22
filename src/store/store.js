@@ -9,7 +9,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     //Initial state 
     state: {
-        counter: 0
+        counter: 0,
+        value: 0
     },
 
     /**Getters allow you to access your state from within different components
@@ -24,6 +25,9 @@ export const store = new Vuex.Store({
         stringCounter(state) {
             return state.counter + " Clicks";
         },
+        getValue(state) {
+            return state.value;
+        }
     },
     //Mutations are like 'setters' - they allow us to adjust or mutate the state
     //They take the state as an argument and an optional payload - passed through to mutate the state
@@ -39,6 +43,9 @@ export const store = new Vuex.Store({
         decrement(state, payload) {
             console.log('Decrementing through Mutations in vuex');
             state.counter -= payload;
+        },
+        updateValue(state, payload) {
+            state.value = payload;
         }
     },
     /**Actions will allow you to run asynchronous code and allow you to commit those to the mutations so that state can be changed after this
@@ -64,6 +71,10 @@ export const store = new Vuex.Store({
             setTimeout(() => {
                 context.commit('decrement', payload.by);
             }, payload.duration);
+        },
+        /*Instead of passing the context object, you can just pass 'commit' as a destructured object - it will only pass commit then, which you can use in the function  */
+        updateValue({commit}, payload) {
+            commit('updateValue', payload);
         }
     }
 })
